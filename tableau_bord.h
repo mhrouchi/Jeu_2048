@@ -15,7 +15,7 @@ public:
     Q_INVOKABLE void NewGame();
 
 signals:
-
+             // cc
 public slots:
 };
 
