@@ -159,11 +159,11 @@ int i,j;
       return w ;
     }
 
-
+/*-------------------------------------------------------------*/
 
   void Manager::Move_left(){
       vector<int> v1(grilleSize),v2(grilleSize);
-
+      bool mouvement=false;
       for(int i=0;i<grilleSize;i++)
        {
             for(int j=0;j<grilleSize;j++)
@@ -171,42 +171,56 @@ int i,j;
                  v1[j]=grille[i][j];
                }
            v2=fusionner(v1);
+           for(int j=0;j<grilleSize;j++)
+           {
+               if(v2[j]!=v1[j])
+                   mouvement=true;
+           }
             for(int j=0;j<grilleSize;j++)
                {
               grille[i][j]=v2[j];
                }
       }
 
+if(mouvement==true)
+{
+    do
+    {
+       i=rand()%grilleSize;
+       j=rand()%grilleSize;
+    }
+    while (grille[i][j]!=0);
+    grille[i][j]=2;
 
-      do{
-     i=rand()%grilleSize;
-     j=rand()%grilleSize;}
-  while (grille[i][j]!=0);
-  grille[i][j]=2;
-
-  grilleChanged();
-  ScoreChanged();
-  ColorChanged();
-
+    grilleChanged();
+    ScoreChanged();
+    ColorChanged();
+}
 
 
   }
 
   /*--------------------------------------------*/
 
-  void Manager::Move_right(){
+  void Manager::Move_right()
+  {
       vector<int> v1(grilleSize),v2(grilleSize);
-
+      bool mouvement=false;
       for(int i=0;i<grilleSize;i++){
           for(int j=0;j<grilleSize;j++){
               v1[grilleSize-1-j]=grille[i][j];
           }
           v2=fusionner(v1);
+          for(int j=0;j<grilleSize;j++)
+          {
+              if(v2[j]!=v1[j])
+                  mouvement=true;
+          }
           for(int j=0;j<grilleSize;j++){
               grille[i][j]=v2[grilleSize-1-j];
           }
       }
-
+    if(mouvement==true){
       do{
          i=rand()%grilleSize;
          j=rand()%grilleSize;}
@@ -216,36 +230,42 @@ int i,j;
       grilleChanged();
       ScoreChanged();
       ColorChanged();
+    }
 
 
-
-  }
+}
 
   /*--------------------------------------------*/
 
   void Manager::Move_down(){
       vector<int> v1(grilleSize),v2(grilleSize);
-
+    bool mouvement=false;
       for(int i=0;i<grilleSize;i++){
           for(int j=0;j<grilleSize;j++){
               v1[grilleSize-1-j]=grille[j][i];
           }
           v2=fusionner(v1);
+          for(int j=0;j<grilleSize;j++)
+          {
+              if(v2[j]!=v1[j])
+                  mouvement=true;
+          }
           for(int j=0;j<grilleSize;j++){
               grille[j][i]=v2[grilleSize-1-j];
           }
       }
+    if(mouvement==true)
+    {
+          do{
+           i=rand()%grilleSize;
+           j=rand()%grilleSize;}
+          while (grille[i][j]!=0);
+          grille[i][j]=2;
 
-      do{
-       i=rand()%grilleSize;
-       j=rand()%grilleSize;}
-      while (grille[i][j]!=0);
-      grille[i][j]=2;
-
-      grilleChanged();
-      ScoreChanged();
-      ColorChanged();
-
+          grilleChanged();
+          ScoreChanged();
+          ColorChanged();
+    }
 
 
   }
@@ -254,17 +274,22 @@ int i,j;
 
   void Manager::Move_up(){
       vector<int> v1(grilleSize),v2(grilleSize);
-
+      bool mouvement=false;
       for(int i=0;i<grilleSize;i++){
           for(int j=0;j<grilleSize;j++){
               v1[j]=grille[j][i];
           }
           v2=fusionner(v1);
+          for(int j=0;j<grilleSize;j++)
+          {
+              if(v2[j]!=v1[j])
+                  mouvement=true;
+          }
           for(int j=0;j<grilleSize;j++){
               grille[j][i]=v2[j];
           }
       }
-
+    if(mouvement==true){
       do{
          i=rand()%grilleSize;
          j=rand()%grilleSize;}
@@ -274,7 +299,7 @@ int i,j;
       grilleChanged();
       ScoreChanged();
       ColorChanged();
-
+    }
 
   }
 
