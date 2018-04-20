@@ -6,6 +6,7 @@ Item {
     id: gamemanager
     width: 450
     height: 550
+    property alias retour: retour
     property alias info: info
     property alias reglage: reglage
 
@@ -31,8 +32,7 @@ Item {
 
             Grid {
                 id: grid
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
+                anchors.fill: parent
 
                 opacity: 1
                 clip: false
@@ -163,6 +163,32 @@ Item {
                 anchors.fill: parent
                 visible:form1visible
 
+            }
+        }
+
+        Rectangle {
+            id: rectangle4
+            width: 80
+            height: 40
+            color: "#32c3e0"
+            anchors.left: parent.left
+            anchors.leftMargin: 28
+            anchors.top: parent.top
+            anchors.topMargin: 24
+
+            MouseArea {
+                id: retour
+                anchors.fill: parent
+
+                Text {
+                    id: text1
+                    color: "#000000"
+                    text: qsTr("Retour")
+                    anchors.fill: parent
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                    font.pixelSize: 18
+                }
             }
         }
 

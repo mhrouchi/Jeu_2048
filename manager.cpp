@@ -185,7 +185,7 @@ int i,j;
 
            //stockage des données
            vector<int> temp;
-           for(int j=0;j<4;j++)
+           for(int j=0;j<grilleSize;j++)
            {
                temp.push_back(v1[j]); //stockage dans un vecteur temporaire
            }
@@ -237,7 +237,7 @@ int i,j;
           }
           //stockage des données
           vector<int> temp;
-          for(int j=0;j<4;j++)
+          for(int j=0;j<grilleSize;j++)
           {
               temp.push_back(v1[j]); //stockage dans un vecteur temporaire
           }
@@ -287,7 +287,7 @@ int i,j;
           }
           //stockage des données
           vector<int> temp;
-          for(int j=0;j<4;j++)
+          for(int j=0;j<grilleSize;j++)
           {
               temp.push_back(v1[j]); //stockage dans un vecteur temporaire
           }
@@ -339,7 +339,7 @@ int i,j;
           }
           //stockage des données
           vector<int> temp;
-          for(int j=0;j<4;j++)
+          for(int j=0;j<grilleSize;j++)
           {
               temp.push_back(v1[j]); //stockage dans un vecteur temporaire
           }
@@ -460,5 +460,29 @@ int i,j;
                                }
                            }
      return ColorGrille ;
+  }
+  /*-------------------------------------------------------------------*/
+  void Manager::retour()
+  {
+      int i,j;
+      supprimer();
+      for(i=0;i<grilleSize;i++)
+      {
+          for(j=0;j<grilleSize;j++)
+              grille[i][j]=VectMatrices[VectMatrices.size()-1][i][j];
+      }
+      VectMatrices.pop_back();
+      grilleChanged();
+      ScoreChanged();
+      ColorChanged();
+  }
+
+  /*--------------------------------------------------------------------*/
+  void Manager::supprimer()
+  {
+      int i,j;
+      for(i=0;i<grilleSize;i++)
+          for(j=0;j<grilleSize;j++)
+              grille[i][j]=0;
   }
 

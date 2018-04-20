@@ -25,12 +25,7 @@ public:
     Q_PROPERTY(QList<QString> ListTileColor READ getColor() NOTIFY ColorChanged);
     QList<QString> getColor();
 
-
-
-
-
     Q_PROPERTY(int Size READ getSize() NOTIFY SizeChanged);
-
     int getSize();
 
 
@@ -43,6 +38,8 @@ public:
     Q_INVOKABLE void Move_down();
     Q_INVOKABLE void Move_up();
     Q_INVOKABLE  int setSize(int v);
+    Q_INVOKABLE void retour();
+    Q_INVOKABLE void supprimer();
 
     void Init_case();
 

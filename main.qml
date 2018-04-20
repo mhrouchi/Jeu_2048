@@ -12,8 +12,13 @@ ApplicationWindow {
 
         Page1Form {
             id:gamemanager
+            retour.onClicked:
+            {
+                managerjeu.retour();
+                console.log("Retour1");
+            }
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
                   managerjeu.Move_up()
                     console.log("fleche haut") //vérification_signal_reçu
