@@ -1,79 +1,174 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import Qt.labs.calendar 1.0
 
-Page {
-    id: page
-    width: 350
-    height: 600
-
-    header: Label {
-        text: qsTr("Page 1")
-        font.pixelSize: Qt.application.font.pixelSize * 2
-        padding: 10
-    }
+Item {
+    id: gamemanager
+    width: 450
+    height: 550
+    property alias info: info
+    property alias reglage: reglage
 
     Rectangle {
-        id: rectangle
-        color: "#c4e7e9"
+        id: rec
+        height: 700
+        color: "#eddd89"
         anchors.fill: parent
 
         Rectangle {
-            id: newGame
-            color: "#eb5483"
-            anchors.top: parent.top
-            anchors.topMargin: 138
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 371
+            id: rectanglegrid
+            width: 350
+            height: 350
+            color: "#f4953d"
+            anchors.horizontalCenterOffset: -1
+            anchors.horizontalCenter: parent.horizontalCenter
             anchors.left: parent.left
-            anchors.leftMargin: 250
+            anchors.leftMargin: 14
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 15
+            scale: 1
+            transformOrigin: Item.Center
+
+            Grid {
+                id: grid
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
+
+                opacity: 1
+                clip: false
+                visible:form1visible
+                scale: 0.9
+                transformOrigin: Item.Center
+                rows: managerjeu.Size
+                columns: managerjeu.Size
+
+                spacing: 10
+
+                Repeater {
+                    anchors.fill: parent
+                    model: managerjeu.Size*managerjeu.Size
+                    delegate: Rectangle {
+                        id:cases
+                        width: 300/managerjeu.Size;
+                        height: 300/managerjeu.Size;
+                        radius: 5
+                        color: managerjeu.ListTileColor[index];
+
+                        Text{
+                            id:remplissage
+                            verticalAlignment: Text.AlignVCenter
+                            horizontalAlignment: Text.AlignHCenter
+                            font.family: "Tahoma"
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.verticalCenter: parent.verticalCenter
+                            font.pixelSize: 40
+                            focus: true
+                            text: managerjeu.grille[index]
+                            /*visible : {
+                            if (managerjeu.grille[index]!=='0')
+                                  return true;
+                                  else  return false;
+                                 }
+                          }*/
+                        }
+                    }
+                }
+
+
+            }
+
+        }
+
+        Rectangle {
+            id: rectangle
+            x: 108
+            width: 165
+            height: 45
+            color: "#ffffff"
+            anchors.top: parent.top
+            anchors.topMargin: 93
             anchors.right: parent.right
-            anchors.rightMargin: 24
+            anchors.rightMargin: 177
 
             Text {
-                id: text1
-                text: qsTr("New")
+                id: score_zone
+                color: "#e21d1d"
+                text: managerjeu.Score
+                anchors.rightMargin: 0
+                anchors.bottomMargin: 0
+                anchors.leftMargin: 0
+                anchors.topMargin: 0
+                font.family: "Times New Roman"
+                textFormat: Text.AutoText
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 anchors.fill: parent
-                font.pixelSize: 20
-
-                MouseArea {
-                    id: mouseArea
-                    anchors.fill: parent
-                }
+                font.pixelSize: 17
             }
         }
 
-        Grid {
-            id: grid
-            width: 300
-            height: 300
-            anchors.verticalCenterOffset: 75
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.horizontalCenter: parent.horizontalCenter
-            rows: 4
-            columns: 4
-            Repeater
-            {
+        Rectangle {
+            id: rectangle1
+            x: 357
+            width: 44
+            height: 33
+            color: "#a9f434"
+            anchors.top: parent.top
+            anchors.topMargin: 75
+            anchors.right: parent.right
+            anchors.rightMargin: 49
+            transformOrigin: Item.Center
+
+            MouseArea {
+                id: info
                 anchors.fill: parent
-                        model: 16
-                        delegate: Rectangle
-                        {
-                            color: "#CECBC3"
-                            width: 75
-                            height: 75
-                            border.width: 4
-                            border.color:"#8F8B83"
+                visible:form1visible
 
-                            Text
-                            {
-                                text: index
-                                verticalAlignment: Text.AlignVCenter
-                                horizontalAlignment: Text.AlignHCenter
-                                anchors.fill: parent
-                            }
-                        }
             }
         }
+
+        Rectangle {
+            id: rectangle2
+            x: 297
+            width: 43
+            height: 33
+            color: "#e65e5e"
+            anchors.right: parent.right
+            anchors.rightMargin: 110
+            anchors.top: parent.top
+            anchors.topMargin: 75
+
+            MouseArea {
+                id: fermer
+                anchors.rightMargin: 0
+                anchors.fill: parent
+                visible:form1visible
+
+            }
+        }
+
+        Rectangle {
+            id: rectangle3
+            x: 328
+            width: 44
+            height: 34
+            color: "#669de2"
+            anchors.top: parent.top
+            anchors.topMargin: 121
+            anchors.right: parent.right
+            anchors.rightMargin: 78
+
+            MouseArea {
+                id: reglage
+                anchors.fill: parent
+                visible:form1visible
+
+            }
+        }
+
+
+
+
     }
 }
+

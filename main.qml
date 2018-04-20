@@ -6,16 +6,44 @@ ApplicationWindow {
     width: 350
     height: 600
     title: qsTr("Tabs")
+    property bool form1visible: true
 
-    SwipeView {
-        id: swipeView
-        anchors.fill: parent
-        currentIndex: tabBar.currentIndex
+
 
         Page1Form {
-        }
+            id:gamemanager
+            Keys.onPressed: {
+              switch (event.key) {
+                case Qt.Key_Up:
+                  managerjeu.Move_up()
+                    console.log("fleche haut") //vérification_signal_reçu
+                  break;
+                case Qt.Key_Down:
+                  managerjeu.Move_down()
+                  break;
+                case Qt.Key_Left:
+                  managerjeu.Move_left()
+                  break;
+                case Qt.Key_Right:
+                  managerjeu.Move_right()
+                  break;
+                  }
+               /* if (managerjeu.gameover()===true)
+                jeuterminé.open();
+                if (managerjeu.win()===true)
+                    jeugangé.open();*/}
+            info.onClicked: {
+}
+            reglage.onClicked: {
+                form1visible = false;
+                var component = Qt.createComponent("Reglage.qml");
+                console.log("Component Status:", component.status, component.errorString());
+                var window = component.createObject(gamemanager, {"x": 0, "y": 10});}
 
-    }
+            }
+
+
+
 
     footer: TabBar {
         id: tabBar

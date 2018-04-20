@@ -1,6 +1,11 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include "Manager.h"
 
+#include <QtQml>
+#include<iostream>
+
+using namespace std;
 int main(int argc, char *argv[])
 {
 #if defined(Q_OS_WIN)
@@ -8,8 +13,11 @@ int main(int argc, char *argv[])
 #endif
 
     QGuiApplication app(argc, argv);
-
+    Manager Mygame;
     QQmlApplicationEngine engine;
+
+    engine.rootContext()->setContextProperty("managerjeu", &Mygame);
+
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
