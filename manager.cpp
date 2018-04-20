@@ -161,43 +161,55 @@ int i,j;
 
 /*-------------------------------------------------------------*/
 
-  void Manager::Move_left(){
+  void Manager::Move_left()
+  {
       vector<int> v1(grilleSize),v2(grilleSize);
+      vector<vector<int>> Matrice; //matrice pour stocker les données
       bool mouvement=false;
       for(int i=0;i<grilleSize;i++)
        {
-            for(int j=0;j<grilleSize;j++)
-               {
+           for(int j=0;j<grilleSize;j++)
+           {
                  v1[j]=grille[i][j];
-               }
+           }
            v2=fusionner(v1);
            for(int j=0;j<grilleSize;j++)
            {
                if(v2[j]!=v1[j])
                    mouvement=true;
            }
-            for(int j=0;j<grilleSize;j++)
-               {
+           for(int j=0;j<grilleSize;j++)
+           {
               grille[i][j]=v2[j];
-               }
+           }
+
+           //stockage des données
+           vector<int> temp;
+           for(int j=0;j<4;j++)
+           {
+               temp.push_back(v1[j]); //stockage dans un vecteur temporaire
+           }
+           Matrice.push_back(temp); //stockage des données dans la matrice
+
       }
 
-if(mouvement==true)
-{
-    do
+    if(mouvement==true)
     {
-       i=rand()%grilleSize;
-       j=rand()%grilleSize;
+        do
+        {
+           i=rand()%grilleSize;
+           j=rand()%grilleSize;
+        }
+        while (grille[i][j]!=0);
+        grille[i][j]=2;
+
+        Matrice[i][j]=2; //on rajoute le 2 générée dans la matrice
+        VectMatrices.push_back(Matrice); //on stock notre matrice dans un vecteur
+
+        grilleChanged();
+        ScoreChanged();
+        ColorChanged();
     }
-    while (grille[i][j]!=0);
-    grille[i][j]=2;
-
-    grilleChanged();
-    ScoreChanged();
-    ColorChanged();
-}
-
-
   }
 
   /*--------------------------------------------*/
@@ -205,9 +217,12 @@ if(mouvement==true)
   void Manager::Move_right()
   {
       vector<int> v1(grilleSize),v2(grilleSize);
+      vector<vector<int>> Matrice; //matrice pour stocker les données
       bool mouvement=false;
-      for(int i=0;i<grilleSize;i++){
-          for(int j=0;j<grilleSize;j++){
+      for(int i=0;i<grilleSize;i++)
+      {
+          for(int j=0;j<grilleSize;j++)
+          {
               v1[grilleSize-1-j]=grille[i][j];
           }
           v2=fusionner(v1);
@@ -216,32 +231,48 @@ if(mouvement==true)
               if(v2[j]!=v1[j])
                   mouvement=true;
           }
-          for(int j=0;j<grilleSize;j++){
+          for(int j=0;j<grilleSize;j++)
+          {
               grille[i][j]=v2[grilleSize-1-j];
           }
+          //stockage des données
+          vector<int> temp;
+          for(int j=0;j<4;j++)
+          {
+              temp.push_back(v1[j]); //stockage dans un vecteur temporaire
+          }
+          Matrice.push_back(temp); //stockage des données dans la matrice
       }
-    if(mouvement==true){
-      do{
-         i=rand()%grilleSize;
-         j=rand()%grilleSize;}
-      while (grille[i][j]!=0);
-      grille[i][j]=2;
+    if(mouvement==true)
+    {
+        do
+        {
+            i=rand()%grilleSize;
+            j=rand()%grilleSize;
+        }
+        while (grille[i][j]!=0);
+        grille[i][j]=2;
 
-      grilleChanged();
-      ScoreChanged();
-      ColorChanged();
+        Matrice[i][j]=2; //on rajoute le 2 générée dans la matrice
+        VectMatrices.push_back(Matrice); //on stock notre matrice dans un vecteur
+
+        grilleChanged();
+        ScoreChanged();
+        ColorChanged();
     }
-
-
 }
 
   /*--------------------------------------------*/
 
-  void Manager::Move_down(){
+  void Manager::Move_down()
+  {
       vector<int> v1(grilleSize),v2(grilleSize);
-    bool mouvement=false;
-      for(int i=0;i<grilleSize;i++){
-          for(int j=0;j<grilleSize;j++){
+      vector<vector<int>> Matrice; //matrice pour stocker les données
+      bool mouvement=false;
+      for(int i=0;i<grilleSize;i++)
+      {
+          for(int j=0;j<grilleSize;j++)
+          {
               v1[grilleSize-1-j]=grille[j][i];
           }
           v2=fusionner(v1);
@@ -250,33 +281,50 @@ if(mouvement==true)
               if(v2[j]!=v1[j])
                   mouvement=true;
           }
-          for(int j=0;j<grilleSize;j++){
+          for(int j=0;j<grilleSize;j++)
+          {
               grille[j][i]=v2[grilleSize-1-j];
           }
+          //stockage des données
+          vector<int> temp;
+          for(int j=0;j<4;j++)
+          {
+              temp.push_back(v1[j]); //stockage dans un vecteur temporaire
+          }
+          Matrice.push_back(temp); //stockage des données dans la matrice
       }
     if(mouvement==true)
     {
-          do{
-           i=rand()%grilleSize;
-           j=rand()%grilleSize;}
-          while (grille[i][j]!=0);
-          grille[i][j]=2;
+        do
+        {
+            i=rand()%grilleSize;
+            j=rand()%grilleSize;
+        }
+        while (grille[i][j]!=0);
+        grille[i][j]=2;
 
-          grilleChanged();
-          ScoreChanged();
-          ColorChanged();
+        Matrice[i][j]=2; //on rajoute le 2 générée dans la matrice
+        VectMatrices.push_back(Matrice); //on stock notre matrice dans un vecteur
+
+        grilleChanged();
+        ScoreChanged();
+        ColorChanged();
     }
 
 
-  }
+ }
 
   /*--------------------------------------------*/
 
-  void Manager::Move_up(){
+  void Manager::Move_up()
+  {
       vector<int> v1(grilleSize),v2(grilleSize);
+      vector<vector<int>> Matrice; //matrice pour stocker les données
       bool mouvement=false;
-      for(int i=0;i<grilleSize;i++){
-          for(int j=0;j<grilleSize;j++){
+      for(int i=0;i<grilleSize;i++)
+      {
+          for(int j=0;j<grilleSize;j++)
+          {
               v1[j]=grille[j][i];
           }
           v2=fusionner(v1);
@@ -285,24 +333,39 @@ if(mouvement==true)
               if(v2[j]!=v1[j])
                   mouvement=true;
           }
-          for(int j=0;j<grilleSize;j++){
+          for(int j=0;j<grilleSize;j++)
+          {
               grille[j][i]=v2[j];
           }
+          //stockage des données
+          vector<int> temp;
+          for(int j=0;j<4;j++)
+          {
+              temp.push_back(v1[j]); //stockage dans un vecteur temporaire
+          }
+          Matrice.push_back(temp); //stockage des données dans la matrice
       }
-    if(mouvement==true){
-      do{
-         i=rand()%grilleSize;
-         j=rand()%grilleSize;}
-      while (grille[i][j]!=0);
-      grille[i][j]=2;
+    if(mouvement==true)
+    {
+        do
+        {
+             i=rand()%grilleSize;
+             j=rand()%grilleSize;
+        }
+        while (grille[i][j]!=0);
 
-      grilleChanged();
-      ScoreChanged();
-      ColorChanged();
+        grille[i][j]=2;
+
+        Matrice[i][j]=2; //on rajoute le 2 générée dans la matrice
+        VectMatrices.push_back(Matrice); //on stock notre matrice dans un vecteur
+
+        grilleChanged();
+        ScoreChanged();
+        ColorChanged();
     }
 
   }
-
+/*------------------------------------------------------------------------------------*/
   int Manager::setSize(int v){
 
       switch (v){

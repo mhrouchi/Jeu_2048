@@ -2,6 +2,9 @@
 #define MANAGER_H
 
 #include <QObject>
+#include<vector> //hrouchi
+
+using namespace std; //hrouchi
 
 class  Manager : public QObject
 {
@@ -63,6 +66,8 @@ private:
     int** grille;
     QList<QString> ContentGrille;
     QList<QString> ColorGrille;
+    vector<vector<vector<int>>> VectMatrices; //hrouchi
+
 
 };
 
