@@ -3,9 +3,9 @@ import QtQuick.Controls 2.2
 
 ApplicationWindow {
     visible: true
-    width: 350
-    height: 600
-    title: qsTr("Tabs")
+    width: 85*managerjeu.Size+40
+    height: 120*managerjeu.Size+50
+    title: qsTr("Jeu 2048")
     property bool form1visible: true
 
 
@@ -72,12 +72,5 @@ ApplicationWindow {
 
 
 
-    footer: TabBar {
-        id: tabBar
-        currentIndex: swipeView.currentIndex
 
-        TabButton {
-            text: qsTr("Page 1")
-        }
-    }
 }
