@@ -213,7 +213,6 @@ int i,j;
         while (grille[i][j]!=0);
         grille[i][j]=2;
 
-        Matrice[i][j]=2; //on rajoute le 2 générée dans la matrice
         VectMatrices.push_back(Matrice); //on stock notre matrice dans un vecteur
 
         grilleChanged();
@@ -273,7 +272,6 @@ int i,j;
         while (grille[i][j]!=0);
         grille[i][j]=2;
 
-        Matrice[i][j]=2; //on rajoute le 2 générée dans la matrice
         VectMatrices.push_back(Matrice); //on stock notre matrice dans un vecteur
 
         grilleChanged();
@@ -331,7 +329,6 @@ int i,j;
         while (grille[i][j]!=0);
         grille[i][j]=2;
 
-        Matrice[i][j]=2; //on rajoute le 2 générée dans la matrice
         VectMatrices.push_back(Matrice); //on stock notre matrice dans un vecteur
 
         grilleChanged();
@@ -394,7 +391,6 @@ int i,j;
 
         grille[i][j]=2;
 
-        Matrice[i][j]=2; //on rajoute le 2 générée dans la matrice
         VectMatrices.push_back(Matrice); //on stock notre matrice dans un vecteur
 
         grilleChanged();
@@ -503,7 +499,7 @@ int i,j;
   void Manager::retour()
   {
       int i,j;
-      //supprimer();
+      supprimer();
       for(i=0;i<grilleSize;i++)
       {
           for(j=0;j<grilleSize;j++)

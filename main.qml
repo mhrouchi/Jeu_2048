@@ -17,8 +17,10 @@ ApplicationWindow {
                 managerjeu.retour();
                 console.log("Retour1");
             }
-            Keys.onPressed: {
-                switch (event.key) {
+            Keys.onPressed:
+            {
+                switch (event.key)
+                {
                 case Qt.Key_Up:
                   managerjeu.Move_up()
                     console.log("fleche haut") //vérification_signal_reçu
@@ -33,10 +35,25 @@ ApplicationWindow {
                   managerjeu.Move_right()
                   break;
                   }
-               /* if (managerjeu.gameover()===true)
-                jeuterminé.open();
-                if (managerjeu.win()===true)
-                    jeugangé.open();*/}
+                if (managerjeu.iflose()===true)
+                {
+                    form1visible = false;
+                    var component = Qt.createComponent("Lose.qml");
+                    console.log("Component Status:", component.status, component.errorString());
+                    var window = component.createObject(gamemanager, {"x": 0, "y": 10});
+                    managerjeu.init_grille();
+                }
+
+                if (managerjeu.ifwin()===true)
+                {
+                    form1visible = false;
+                    var component = Qt.createComponent("Win.qml");
+                    console.log("Component Status:", component.status, component.errorString());
+                    var window = component.createObject(gamemanager, {"x": 0, "y": 10});
+                    managerjeu.init_grille();
+                }
+
+            }
             info.onClicked: {
 }
             reglage.onClicked: {
