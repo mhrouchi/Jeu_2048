@@ -38,24 +38,29 @@ ApplicationWindow {
                 if (managerjeu.iflose()===true)
                 {
                     form1visible = false;
-                    var component = Qt.createComponent("Lose.qml");
-                    console.log("Component Status:", component.status, component.errorString());
-                    var window = component.createObject(gamemanager, {"x": 0, "y": 10});
+                    var component3 = Qt.createComponent("Lose.qml");
+                    console.log("Component Status:", component.status, component3.errorString());
+                    var window3 = component3.createObject(gamemanager, {"x": 0, "y": 10});
                     managerjeu.init_grille();
                 }
 
                 if (managerjeu.ifwin()===true)
                 {
                     form1visible = false;
-                    var component = Qt.createComponent("Win.qml");
-                    console.log("Component Status:", component.status, component.errorString());
-                    var window = component.createObject(gamemanager, {"x": 0, "y": 10});
+                    var component1 = Qt.createComponent("Win.qml");
+                    console.log("Component Status:", component1.status, component1.errorString());
+                    var window1 = component1.createObject(gamemanager, {"x": 0, "y": 10});
                     managerjeu.init_grille();
                 }
 
             }
-            info.onClicked: {
-}
+            info.onClicked:
+            {
+                form1visible = false;
+                var component2 = Qt.createComponent("Info.qml");
+                console.log("Component Status:", component2.status, component2.errorString());
+                var window2 = component2.createObject(gamemanager, {"x": 0, "y": 10});
+            }
             reglage.onClicked: {
                 form1visible = false;
                 var component = Qt.createComponent("Reglage.qml");

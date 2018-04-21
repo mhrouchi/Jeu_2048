@@ -13,11 +13,13 @@ Item {
 
         Rectangle {
             id: rectangle1
-            x: 271
-            y: 41
-            width: 36
-            height: 35
+            x: 349
+            y: 15
+            width: 70
+            height: 70
             color: "#ffffff"
+            anchors.right: parent.right
+            anchors.rightMargin: 15
 
             MouseArea {
                 anchors.fill: parent
@@ -25,17 +27,20 @@ Item {
                 Image {
                     id: image1
                     anchors.fill: parent
-                    source: "../../fermer.JPG"
+                    source: "../../croix2.JPG"
                 }
             }
         }
 
         Image {
             id: image
-            x: 0
             y: 160
-            width: 392
             height: 180
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.left: parent.left
+            anchors.leftMargin: 15
+            anchors.right: parent.right
+            anchors.rightMargin: 15
             source: "../../infos.JPG"
         }
     }
