@@ -465,16 +465,17 @@ int i,j;
   void Manager::retour()
   {
       int i,j;
-      supprimer();
+      //supprimer();
       for(i=0;i<grilleSize;i++)
       {
           for(j=0;j<grilleSize;j++)
               grille[i][j]=VectMatrices[VectMatrices.size()-1][i][j];
       }
-      VectMatrices.pop_back();
+
       grilleChanged();
       ScoreChanged();
       ColorChanged();
+      VectMatrices.pop_back();
   }
 
   /*--------------------------------------------------------------------*/
