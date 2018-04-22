@@ -12,5 +12,5 @@ Ce jeu est réalisé par **AISSI Khalid** et **HROUCHI Mohammed** étudiants à 
 - Pour changer les paramètres du jeu:
     - Ouvrez la fenetre des paramètres à l'aide du bouton "engrenage"
     - Effectuez vos choix
-    - Fermez la fenetre 
+    - Fermez la fenêtre 
     - C'est parti...
