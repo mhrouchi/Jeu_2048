@@ -10,7 +10,7 @@ Ce jeu est réalisé par **AISSI Khalid** et **HROUCHI Mohammed** étudiants à 
     - Le bouton "retour" nous permet dans le cas du mode pédagogique de reculer des pas en arrière.
     - Le bouton"new game" permet de recommencer le jeu à zero.
 - Pour changer les paramètres du jeu:
-    - ouvrez la fenetre des paramètres à l'aide du bouton "engrenage"
-    - effectuez vos choix
-    - fermez la fenetre 
+    - Ouvrez la fenetre des paramètres à l'aide du bouton "engrenage"
+    - Effectuez vos choix
+    - Fermez la fenetre 
     - C'est parti...
