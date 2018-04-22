@@ -460,7 +460,7 @@ int i,j;
                                         ColorGrille.append("#EEE4DA");
                                        break;
                                    case 4:
-                                       ColorGrille.append( "#EEDFCA");
+                                       ColorGrille.append( "#EEBECA");
                                        break;
                                    case 8:
 
