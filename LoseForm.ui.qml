@@ -1,9 +1,10 @@
+//Interface affiche à l'utilisateur "you lose"
 import QtQuick 2.4
 
 Item {
     id: idlose
-    width: 85*managerjeu.Size+40
-    height: 120*managerjeu.Size+50
+    width:400 //85*managerjeu.Size+40
+    height:530// 120*managerjeu.Size+50
     property alias mouseArea: mouseArea
 
     Rectangle {
@@ -18,7 +19,7 @@ Item {
             width: 67
             height: 50
             color: "#ffffff"
-
+        //Fermer la fenetre
             MouseArea {
                 id: mouseArea
                 anchors.fill: parent
@@ -34,8 +35,8 @@ Item {
         Rectangle {
             id: rectangle2
             x: 172
-            width: 85*managerjeu.Size+40
-            height: 120*managerjeu.Size+50
+            width:400// 85*managerjeu.Size+40
+            height:530-62// 120*managerjeu.Size+50
             color: "#ffffff"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top

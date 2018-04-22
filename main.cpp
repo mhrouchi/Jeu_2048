@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 #endif
 
     QGuiApplication app(argc, argv);
-    Manager Mygame;
+    Manager Mygame;   //création d'un objet de la classe manager
     QQmlApplicationEngine engine;
 
     engine.rootContext()->setContextProperty("managerjeu", &Mygame);

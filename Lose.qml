@@ -6,6 +6,6 @@ LoseForm {
         idlose.destroy();
         form1visible = true;
 }
-    width: 85*managerjeu.Size+40
-    height: 120*managerjeu.Size+50
+    width:85*managerjeu.Size+40
+    height:120*managerjeu.Size+50
 }

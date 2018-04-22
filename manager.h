@@ -1,10 +1,9 @@
 #ifndef MANAGER_H
 #define MANAGER_H
-
 #include <QObject>
-#include<vector> //hrouchi
+#include<vector>
 
-using namespace std; //hrouchi
+using namespace std;
 
 class  Manager : public QObject
 {
@@ -30,18 +29,18 @@ public:
 
 
 
-    Q_INVOKABLE void init_grille();
-    Q_INVOKABLE bool ifwin();
-    Q_INVOKABLE bool iflose();
-    Q_INVOKABLE void Move_left();
-    Q_INVOKABLE void Move_right();
-    Q_INVOKABLE void Move_down();
-    Q_INVOKABLE void Move_up();
-    Q_INVOKABLE  int setSize(int v);
-    Q_INVOKABLE void retour();
+    Q_INVOKABLE void init_grille();//initialiser le jeu
+    Q_INVOKABLE bool ifwin(); //verifier si on gagne
+    Q_INVOKABLE bool iflose(); // verifier si on perds
+    Q_INVOKABLE void Move_left(); //mouvement à gauche
+    Q_INVOKABLE void Move_right(); //mouvement à droite
+    Q_INVOKABLE void Move_down();   //mouvement en bas
+    Q_INVOKABLE void Move_up();   //mouvement en haut
+    Q_INVOKABLE  int setSize(int v); //changer la taille
+    Q_INVOKABLE void retour(); //effectuer un pas en arriere
     Q_INVOKABLE void supprimer();
 
-    void Init_case();
+    void Init_case(); // initialiser une case avec 2 ou 4
 
     static int size;
     static int max_tile;
@@ -63,7 +62,7 @@ private:
     int** grille;
     QList<QString> ContentGrille;
     QList<QString> ColorGrille;
-    vector<vector<vector<int>>> VectMatrices; //hrouchi
+    vector<vector<vector<int>>> VectMatrices; //Vecteur pour stocker des matrices ou grilles
 
 
 };

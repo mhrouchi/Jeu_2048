@@ -29,7 +29,7 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             scale: 1
             transformOrigin: Item.Center
-
+            //Grille du jeu
             Grid {
                 id: grid
                 anchors.fill: parent
@@ -64,12 +64,12 @@ Item {
                             font.pixelSize: 40
                             focus: true
                             text: managerjeu.grille[index]
-                            /*visible : {
+                            visible : {
                             if (managerjeu.grille[index]!=='0')
                                   return true;
                                   else  return false;
                                  }
-                          }*/
+                          }
                         }
                     }
                 }
@@ -114,7 +114,7 @@ Item {
             anchors.right: parent.right
             anchors.rightMargin: 64
             transformOrigin: Item.Center
-
+            //avoir des information sur le jeu
             MouseArea {
                 id: info
                 anchors.fill: parent
@@ -140,7 +140,7 @@ Item {
             anchors.topMargin: 8
             anchors.right: parent.right
             anchors.rightMargin: 8
-
+            //quitter le jeu
             MouseArea {
                 id: fermer
                 anchors.fill: parent
@@ -166,7 +166,7 @@ Item {
             anchors.topMargin: 62
             anchors.right: parent.right
             anchors.rightMargin: 13
-
+            //afficher les paramètres du jeu
             MouseArea {
                 id: reglage
                 anchors.fill: parent
@@ -185,6 +185,8 @@ Item {
 
         Rectangle {
             id: rectangle4
+            visible:modepedagogique
+
             x: 241
             width: 55
             height: 45
@@ -193,7 +195,7 @@ Item {
             anchors.topMargin: 109
             anchors.right: parent.right
             anchors.rightMargin: 89
-
+            //le choix retour pour le mode pédagogique
             MouseArea {
                 id: retour
                 anchors.fill: parent
@@ -245,7 +247,7 @@ Item {
             anchors.top: parent.top
             anchors.topMargin: 99
             anchors.left: parent.left
-            anchors.leftMargin: 66
+            anchors.leftMargin: 77
 
             Image {
                 id: image5
@@ -254,19 +256,13 @@ Item {
                 anchors.fill: parent
                 source: "newgame.ico"
             }
-
+            //commencer un nouveau jeu
             MouseArea {
                 id: gamenewbutt
                 width: 50
                 anchors.fill: parent
             }
         }
-
-
-
-
-    }
-
     Image {
         id: image4
         anchors.fill: parent

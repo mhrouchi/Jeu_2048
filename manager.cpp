@@ -9,14 +9,14 @@ int Manager::max_tile=0;
 int Manager::size=4;
 int i,j;
 
-/*--------------------------------------------*/
+/*----------------------Constructeur inistialise le jeu ----------------------*/
 
     Manager::Manager(QObject *parent) : QObject(parent)
     {
         init_grille();
         grilleChanged();
     }
-/*--------------------------------------------*/
+/*----------------------Destructeur ----------------------*/
 
     Manager::~Manager()
     {
@@ -31,14 +31,14 @@ int i,j;
         }
     }
 
-/*--------------------------------------------*/
+/*----------------------accès à la taille de la grille----------------------*/
 
     int Manager::getSize()
     {
         return size;
     }
 
-/*--------------------------------------------*/
+/*---------------------Fonction initialise le jeu 4*4-----------------------*/
 
     void Manager::init_grille()
      {
@@ -60,7 +60,7 @@ int i,j;
         SizeChanged();
 
     }
-/*--------------------------------------------*/
+/*----------------------Fonction initialise deux cases differentes avec 2 ou 4 ----------------------*/
 
     void Manager::Init_case()
     {
@@ -75,14 +75,14 @@ int i,j;
         do {grille[i2][j2]=rand()%2+rand()%2;} while(grille[i2][j2]==0||grille[i2][j2]==1);
     }
 
-/*--------------------------------------------*/
+/*----------------------Fonction permet de verifier si l'utilisateur gagne ----------------------*/
 
     bool Manager::ifwin()
     {
         return (max_tile == 2048) ;
     }
 
-/*--------------------------------------------*/
+/*----------------------Fonction permet de verifier si l'utilisateur perds ------------------*/
 
     bool Manager::iflose()
     {
@@ -103,7 +103,7 @@ int i,j;
     }
 
 
-/*--------------------------------------------*/
+/*---------------------Fonction permet de fusionner les cases qui portent les memes chiffres -----------------------*/
 
   vector<int> fusionner(vector<int> v0)
   {
@@ -159,7 +159,7 @@ int i,j;
       return w ;
     }
 
-/*-------------------------------------------------------------*/
+/*------------------------------Gestion du mouvement à gauche-------------------------------*/
 
   void Manager::Move_left()
   {
@@ -221,7 +221,7 @@ int i,j;
     }
   }
 
-  /*--------------------------------------------*/
+  /*-----------------------Gestion du mouvement à droite ---------------------*/
 
   void Manager::Move_right()
   {
@@ -280,7 +280,7 @@ int i,j;
     }
 }
 
-  /*--------------------------------------------*/
+  /*---------------------Gestion du mouvement en bas -----------------------*/
 
   void Manager::Move_down()
   {
@@ -339,7 +339,7 @@ int i,j;
 
  }
 
-  /*--------------------------------------------*/
+  /*-----------------------Gestion du mouvement en haut  ---------------------*/
 
   void Manager::Move_up()
   {
@@ -399,7 +399,7 @@ int i,j;
     }
 
   }
-/*------------------------------------------------------------------------------------*/
+/*-------------------------------------Fonction permet de choisir la taile de notre grille----------------------------------*/
   int Manager::setSize(int v){
 
       switch (v){
@@ -423,7 +423,7 @@ int i,j;
       return Manager::size;
 
   }
-
+/*--------------------------Methode permet d'afficher la matrice sur la grille de l'interface----------------------------------*/
 
   QList<QString> Manager::readGrille()
   {
@@ -437,14 +437,14 @@ int i,j;
        return ContentGrille;
   }
 
-
+/*-------------------------------------Methode permet d'afficher le score sur l'interface--------------------------------------*/
   QString Manager::getScore()
    {
        return(QString::number(Manager::iScore));
 
    }
 
-
+/*---------------------------Methode permet de changer la couleur des cases selon le chiffre --------------------------------*/
   QList<QString> Manager::getColor()
   {
                  ColorGrille.clear();
@@ -495,7 +495,7 @@ int i,j;
                            }
      return ColorGrille ;
   }
-  /*-------------------------------------------------------------------*/
+  /*-------------------------------- Methode permet d'effectuer un pas en arriere -----------------------------------*/
   void Manager::retour()
   {
       int i,j;
