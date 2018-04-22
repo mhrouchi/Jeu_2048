@@ -71,8 +71,8 @@ int i,j;
             i2=rand()%grilleSize;
             j2=rand()%grilleSize;
         } while((j1==j2)&&(i1==i2));
-        do {grille[i1][j1]=rand()%2+rand()%2;} while(grille[i1][j1]==0||grille[i1][j1]==1);
-        do {grille[i2][j2]=rand()%2+rand()%2;} while(grille[i2][j2]==0||grille[i2][j2]==1);
+        do {grille[i1][j1]=2*(rand()%2+rand()%2);} while(grille[i1][j1]==0);
+        do {grille[i2][j2]=2*(rand()%2+rand()%2);} while(grille[i2][j2]==0);
     }
 
 /*----------------------Fonction permet de verifier si l'utilisateur gagne ----------------------*/
