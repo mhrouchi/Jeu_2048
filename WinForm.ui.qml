@@ -2,57 +2,49 @@ import QtQuick 2.4
 
 Item {
     id: idwin
-    width: 400
-    height: 400
+    width: 85*managerjeu.Size+40
+    height: 120*managerjeu.Size+50
     property alias mouseArea: mouseArea
 
     Rectangle {
         id: rectangle
-        color: "#e3e0e0"
+        color: "#f0fafc"
         anchors.fill: parent
 
         Rectangle {
             id: rectangle1
-            x: 270
-            y: 30
+            x: 292
+            y: 8
             width: 100
             height: 50
-            color: "#f87979"
+            color: "#f0fafc"
 
             MouseArea {
                 id: mouseArea
                 anchors.fill: parent
 
-                Text {
-                    id: text1
-                    text: qsTr("Fermer")
-                    font.italic: true
+                Image {
+                    id: image1
                     anchors.fill: parent
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: 19
+                    source: "close.png"
                 }
             }
         }
 
         Rectangle {
             id: rectangle2
-            x: 112
-            y: 168
-            width: 380
-            height: 60
-            color: "#b1beee"
-            anchors.verticalCenter: parent.verticalCenter
+            x: 0
+            width: 85*managerjeu.Size+40
+            height: 120*managerjeu.Size+50
+            color: "#ffffff"
             anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 62
 
-            Text {
-                id: text2
-                text: qsTr("You win! Congratulations!!")
-                font.italic: true
+            Image {
+                id: image
                 anchors.fill: parent
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-                font.pixelSize: 19
+                source: "you win.gif"
             }
         }
     }

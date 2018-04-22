@@ -4,8 +4,8 @@ import Qt.labs.calendar 1.0
 
 Item {
     id: gamemanager
-    width:85*4+40;
-    height:120*4+50;
+    width:85*managerjeu.Size+40;
+    height:120*managerjeu.Size+50;
     property alias fermer: fermer
     property alias gamenewbutt: gamenewbutt
     property alias retour: retour
@@ -20,8 +20,8 @@ Item {
         Rectangle {
             id: rectanglegrid
             x: 10
-            width:85*4;
-            height:85*4;
+            width:85*managerjeu.Size;
+            height:85*managerjeu.Size;
             color: "#00000000"
             anchors.top: parent.top
             anchors.topMargin: 150

@@ -48,7 +48,7 @@ ApplicationWindow {
                 {
                     form1visible = false;
                     var component3 = Qt.createComponent("Lose.qml");
-                    console.log("Component Status:", component.status, component3.errorString());
+                    console.log("Component Status:", component3.status, component3.errorString());
                     var window3 = component3.createObject(gamemanager, {"x": 0, "y": 10});
                     managerjeu.init_grille();
                 }

@@ -2,57 +2,49 @@ import QtQuick 2.4
 
 Item {
     id: idlose
-    width: 400
-    height: 400
+    width: 85*managerjeu.Size+40
+    height: 120*managerjeu.Size+50
     property alias mouseArea: mouseArea
 
     Rectangle {
         id: rectangle
-        color: "#ffffff"
+        color: "#000000"
         anchors.fill: parent
 
         Rectangle {
             id: rectangle1
-            x: 270
-            y: 30
-            width: 100
+            x: 325
+            y: 8
+            width: 67
             height: 50
-            color: "#f47979"
+            color: "#ffffff"
 
             MouseArea {
                 id: mouseArea
                 anchors.fill: parent
 
-                Text {
-                    id: text1
-                    text: qsTr("Fermer")
-                    font.italic: true
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
+                Image {
+                    id: image
                     anchors.fill: parent
-                    font.pixelSize: 19
+                    source: "close.png"
                 }
             }
         }
 
         Rectangle {
             id: rectangle2
-            x: 25
-            y: 126
-            width: 380
-            height: 60
-            color: "#f4d378"
-            anchors.verticalCenter: parent.verticalCenter
+            x: 172
+            width: 85*managerjeu.Size+40
+            height: 120*managerjeu.Size+50
+            color: "#ffffff"
             anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 62
 
-            Text {
-                id: text2
-                text: qsTr("You lose!!")
-                font.italic: true
+            Image {
+                id: image1
                 anchors.fill: parent
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-                font.pixelSize: 19
+                source: "You_lose.png"
             }
         }
     }
