@@ -10,8 +10,17 @@ ApplicationWindow {
 
 
 
-        Page1Form {
-            id:gamemanager
+    Page1Form {
+        id:gamemanager
+        fermer.onClicked: {
+            Qt.quit()
+
+}
+        gamenewbutt.onClicked: {
+            managerjeu.init_grille();
+
+
+}
             retour.onClicked:
             {
                 managerjeu.retour();

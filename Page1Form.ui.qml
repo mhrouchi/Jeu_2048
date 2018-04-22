@@ -4,8 +4,10 @@ import Qt.labs.calendar 1.0
 
 Item {
     id: gamemanager
-    width:85*managerjeu.Size+40;
-    height:120*managerjeu.Size+50;
+    width:85*4+40;
+    height:120*4+50;
+    property alias fermer: fermer
+    property alias gamenewbutt: gamenewbutt
     property alias retour: retour
     property alias info: info
     property alias reglage: reglage
@@ -18,8 +20,8 @@ Item {
         Rectangle {
             id: rectanglegrid
             x: 10
-            width:85*managerjeu.Size;
-            height:85*managerjeu.Size;
+            width:85*4;
+            height:85*4;
             color: "#00000000"
             anchors.top: parent.top
             anchors.topMargin: 150
@@ -183,14 +185,14 @@ Item {
 
         Rectangle {
             id: rectangle4
-            x: 236
-            width: 50
-            height: 40
+            x: 241
+            width: 55
+            height: 45
             color: "#00000000"
             anchors.top: parent.top
-            anchors.topMargin: 104
+            anchors.topMargin: 109
             anchors.right: parent.right
-            anchors.rightMargin: 64
+            anchors.rightMargin: 89
 
             MouseArea {
                 id: retour
@@ -198,6 +200,7 @@ Item {
 
                 Image {
                     id: image3
+                    height: 50
                     anchors.topMargin: -7
                     anchors.fill: parent
                     source: "back_arrow_14447.png"
@@ -231,6 +234,31 @@ Item {
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+            }
+        }
+
+        Rectangle {
+            id: newgame
+            width: 55
+            height: 55
+            color: "#00000000"
+            anchors.top: parent.top
+            anchors.topMargin: 99
+            anchors.left: parent.left
+            anchors.leftMargin: 66
+
+            Image {
+                id: image5
+                width: 55
+                height: 55
+                anchors.fill: parent
+                source: "newgame.ico"
+            }
+
+            MouseArea {
+                id: gamenewbutt
+                width: 50
+                anchors.fill: parent
             }
         }
 
