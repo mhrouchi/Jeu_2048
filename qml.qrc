@@ -6,11 +6,11 @@
         <file>qtquickcontrols2.conf</file>
         <file>Reglage.qml</file>
         <file>ReglageForm.ui.qml</file>
-        <file>Info.qml</file>
-        <file>InfoForm.ui.qml</file>
         <file>Win.qml</file>
         <file>WinForm.ui.qml</file>
         <file>Lose.qml</file>
         <file>LoseForm.ui.qml</file>
+        <file>Inform.qml</file>
+        <file>InformForm.ui.qml</file>
     </qresource>
 </RCC>
