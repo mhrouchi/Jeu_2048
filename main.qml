@@ -57,9 +57,9 @@ ApplicationWindow {
             info.onClicked:
             {
                 form1visible = false;
-                var component2 = Qt.createComponent("Info.qml");
+                var component2 = Qt.createComponent("Inform.qml");
                 console.log("Component Status:", component2.status, component2.errorString());
-                var window2 = component2.createObject(gamemanager, {"x": 0, "y": 10});
+                var window2 = component2.createObject(gamemanager, {"x": 0, "y": 0});
             }
             reglage.onClicked: {
                 form1visible = false;

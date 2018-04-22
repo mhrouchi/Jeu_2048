@@ -154,6 +154,16 @@ Item {
                 anchors.leftMargin: 0
                 anchors.topMargin: 0
                 anchors.fill: parent
+
+                Text {
+                    id: text5
+                    text: qsTr("Quitter")
+                    font.bold: true
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors.fill: parent
+                    font.pixelSize: 15
+                }
             }
         }
     }
