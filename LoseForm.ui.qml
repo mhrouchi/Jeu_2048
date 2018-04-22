@@ -13,13 +13,31 @@ Item {
         anchors.fill: parent
 
         Rectangle {
+            id: rectangle2
+            // 85*managerjeu.Size+40
+            // 120*managerjeu.Size+50
+            color: "#00000000"
+            anchors.topMargin: 120
+            anchors.fill: parent
+
+            Image {
+                id: image1
+                anchors.fill: parent
+                source: "LoseGame.jpg"
+            }
+        }
+
+        Rectangle {
             id: rectangle1
-            x: 325
-            y: 8
-            width: 67
-            height: 50
-            color: "#ffffff"
-        //Fermer la fenetre
+            x: 240
+            width: 175
+            height: 114
+            color: "#00000000"
+            anchors.top: parent.top
+            anchors.topMargin: 8
+            anchors.horizontalCenterOffset: 1
+            anchors.horizontalCenter: parent.horizontalCenter
+            //Fermer la fenetre
             MouseArea {
                 id: mouseArea
                 anchors.fill: parent
@@ -29,23 +47,6 @@ Item {
                     anchors.fill: parent
                     source: "close.png"
                 }
-            }
-        }
-
-        Rectangle {
-            id: rectangle2
-            x: 172
-            width:400// 85*managerjeu.Size+40
-            height:530-62// 120*managerjeu.Size+50
-            color: "#ffffff"
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            anchors.topMargin: 62
-
-            Image {
-                id: image1
-                anchors.fill: parent
-                source: "You_lose.png"
             }
         }
     }

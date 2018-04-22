@@ -25,7 +25,10 @@ Item {
             x: 305
             width: 87
             height: 41
-            color: "#ffffff"
+            color: "#ca1a1a"
+            radius: 20
+            border.color: "#562929"
+            border.width: 5
             anchors.top: parent.top
             anchors.topMargin: 8
             anchors.right: parent.right
@@ -37,7 +40,7 @@ Item {
 
                 Text {
                     id: text1
-                    color: "#c50808"
+                    color: "#f9f8f8"
                     text: qsTr("Quitter")
                     font.bold: true
                     anchors.fill: parent
