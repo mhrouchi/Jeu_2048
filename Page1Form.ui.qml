@@ -83,10 +83,10 @@ Item {
             width: 49
             height: 40
             color: "#eaf0ed"
-            anchors.horizontalCenterOffset: -48
+            anchors.left: parent.left
+            anchors.leftMargin: 102
             anchors.top: parent.top
             anchors.topMargin: 8
-            anchors.horizontalCenter: parent.horizontalCenter
 
             Text {
                 id: score_zone
@@ -104,10 +104,11 @@ Item {
         Rectangle {
             id: rectangle1
             x: 236
-            y: 8
             width: 50
             height: 50
             color: "#00000000"
+            anchors.top: parent.top
+            anchors.topMargin: 8
             anchors.right: parent.right
             anchors.rightMargin: 64
             transformOrigin: Item.Center
@@ -130,10 +131,11 @@ Item {
         Rectangle {
             id: rectangle2
             x: 292
-            y: 8
             width: 50
             height: 50
             color: "#00000000"
+            anchors.top: parent.top
+            anchors.topMargin: 8
             anchors.right: parent.right
             anchors.rightMargin: 8
 
@@ -155,10 +157,11 @@ Item {
         Rectangle {
             id: rectangle3
             x: 297
-            y: 62
             width: 40
             height: 40
             color: "#00000000"
+            anchors.top: parent.top
+            anchors.topMargin: 62
             anchors.right: parent.right
             anchors.rightMargin: 13
 
@@ -180,13 +183,14 @@ Item {
 
         Rectangle {
             id: rectangle4
+            x: 236
             width: 50
             height: 40
             color: "#00000000"
-            anchors.left: parent.left
-            anchors.leftMargin: 223
             anchors.top: parent.top
             anchors.topMargin: 104
+            anchors.right: parent.right
+            anchors.rightMargin: 64
 
             MouseArea {
                 id: retour
@@ -237,9 +241,9 @@ Item {
 
     Image {
         id: image4
-        z: -1
         anchors.fill: parent
-        source: "New-Blue-Background-Main-2.jpg"
+        z: -1
+        source: "background1.jpg"
     }
 }
 
