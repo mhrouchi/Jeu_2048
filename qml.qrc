@@ -12,5 +12,12 @@
         <file>LoseForm.ui.qml</file>
         <file>Inform.qml</file>
         <file>InformForm.ui.qml</file>
+        <file>setting.ico</file>
+        <file>close.png</file>
+        <file>info.png</file>
+        <file>background.jpg</file>
+        <file>Back-2-2-icon.png</file>
+        <file>back_arrow_14447.png</file>
+        <file>New-Blue-Background-Main-2.jpg</file>
     </qresource>
 </RCC>

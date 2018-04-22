@@ -2,8 +2,8 @@ import QtQuick 2.4
 
 Item {
     id: information
-    width:85*managerjeu.Size+20
-    height:120*managerjeu.Size+30
+    width:400
+    height:450
     property alias text9: text9
     property alias text8: text8
     property alias text7: text7
@@ -22,10 +22,13 @@ Item {
         Rectangle {
             id: rectangle1
             x: 305
-            y: 8
             width: 87
             height: 41
             color: "#ffffff"
+            anchors.top: parent.top
+            anchors.topMargin: 8
+            anchors.right: parent.right
+            anchors.rightMargin: 8
 
             MouseArea {
                 id: quit
@@ -46,21 +49,23 @@ Item {
 
         Rectangle {
             id: rectangle2
-            width: 85*managerjeu.Size+20
-            height: 120*managerjeu.Size+30
-            color: "#ffffff"
+            x: 15
+            width: 370
+            height: 286
+
+            color: "#a0db84"
             anchors.top: parent.top
-            anchors.topMargin: 53
-            anchors.left: parent.left
-            anchors.leftMargin: 0
+            anchors.topMargin: 82
+            anchors.right: parent.right
+            anchors.rightMargin: 15
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
 
             Text {
                 id: text9
                 x: 154
                 y: 306
                 text: qsTr("ECL 2017-2018")
-                anchors.right: parent.right
-                anchors.rightMargin: 133
                 font.italic: true
                 font.family: "Arial"
                 font.pixelSize: 16

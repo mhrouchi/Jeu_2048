@@ -8,6 +8,6 @@ InformForm {
         information.destroy();
         form1visible = true;
     }
-    width:85*managerjeu.Size+20
-    height:120*managerjeu.Size+30
+    width:400
+    height:550
 }

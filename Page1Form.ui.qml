@@ -4,23 +4,23 @@ import Qt.labs.calendar 1.0
 
 Item {
     id: gamemanager
-    width:350//85*managerjeu.Size+40;
-    height:450//120*managerjeu.Size+50;
+    width:85*managerjeu.Size+40;
+    height:120*managerjeu.Size+50;
     property alias retour: retour
     property alias info: info
     property alias reglage: reglage
 
     Rectangle {
         id: rec
-        color: "#eddd89"
+        color: "#00000000"
         anchors.fill: parent
 
         Rectangle {
             id: rectanglegrid
             x: 10
-            width:350//85*managerjeu.Size;
-            height:350//85*managerjeu.Size;
-            color: "#f4953d"
+            width:85*managerjeu.Size;
+            height:85*managerjeu.Size;
+            color: "#00000000"
             anchors.top: parent.top
             anchors.topMargin: 150
             anchors.horizontalCenterOffset: -1
@@ -82,8 +82,8 @@ Item {
 
             width: 49
             height: 40
-            color: "#ffffff"
-            anchors.horizontalCenterOffset: 6
+            color: "#eaf0ed"
+            anchors.horizontalCenterOffset: -48
             anchors.top: parent.top
             anchors.topMargin: 8
             anchors.horizontalCenter: parent.horizontalCenter
@@ -92,7 +92,6 @@ Item {
                 id: score_zone
                 color: "#e21d1d"
                 text: managerjeu.Score
-                anchors.bottomMargin: 0
                 anchors.fill: parent
                 font.family: "Times New Roman"
                 textFormat: Text.AutoText
@@ -107,8 +106,8 @@ Item {
             x: 236
             y: 8
             width: 50
-            height: 40
-            color: "#a9f434"
+            height: 50
+            color: "#00000000"
             anchors.right: parent.right
             anchors.rightMargin: 64
             transformOrigin: Item.Center
@@ -118,13 +117,11 @@ Item {
                 anchors.fill: parent
                 visible:form1visible
 
-                Text {
-                    id: text2
-                    text: qsTr("Infos")
+                Image {
+                    id: image2
+                    height: 50
                     anchors.fill: parent
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: 12
+                    source: "info.png"
                 }
 
             }
@@ -135,8 +132,8 @@ Item {
             x: 292
             y: 8
             width: 50
-            height: 40
-            color: "#e65e5e"
+            height: 50
+            color: "#00000000"
             anchors.right: parent.right
             anchors.rightMargin: 8
 
@@ -145,13 +142,11 @@ Item {
                 anchors.fill: parent
                 visible:form1visible
 
-                Text {
-                    id: text3
-                    text: qsTr("Fermer")
+                Image {
+                    id: image1
+                    height: 50
                     anchors.fill: parent
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: 12
+                    source: "close.png"
                 }
 
             }
@@ -159,38 +154,37 @@ Item {
 
         Rectangle {
             id: rectangle3
-            x: 292
-            y: 54
-            width: 50
+            x: 297
+            y: 62
+            width: 40
             height: 40
-            color: "#669de2"
+            color: "#00000000"
             anchors.right: parent.right
-            anchors.rightMargin: 8
+            anchors.rightMargin: 13
 
             MouseArea {
                 id: reglage
                 anchors.fill: parent
                 visible:form1visible
 
-                Text {
-                    id: text4
-                    text: qsTr("Reglage")
-                    anchors.fill: parent
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: 12
-                }
+            }
 
+            Image {
+                id: image
+                width: 40
+                height: 40
+                anchors.fill: parent
+                source: "setting.ico"
             }
         }
 
         Rectangle {
             id: rectangle4
-            width: 55
+            width: 50
             height: 40
-            color: "#32c3e0"
+            color: "#00000000"
             anchors.left: parent.left
-            anchors.leftMargin: 210
+            anchors.leftMargin: 223
             anchors.top: parent.top
             anchors.topMargin: 104
 
@@ -198,21 +192,54 @@ Item {
                 id: retour
                 anchors.fill: parent
 
-                Text {
-                    id: text1
-                    color: "#000000"
-                    text: qsTr("Retour")
+                Image {
+                    id: image3
+                    anchors.topMargin: -7
                     anchors.fill: parent
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: 18
+                    source: "back_arrow_14447.png"
                 }
+            }
+        }
+
+        Rectangle {
+            id: rectangle5
+            x: 38
+            y: 8
+            width: 65
+            height: 40
+            color: "#ffffff"
+
+            Label {
+                id: label
+                color: "#165997"
+                text: qsTr("Score")
+                anchors.rightMargin: 0
+                anchors.fill: parent
+                font.pointSize: 14
+                font.underline: false
+                font.italic: true
+                opacity: 1
+                font.capitalization: Font.MixedCase
+                font.bold: true
+                font.family: "Times New Roman"
+                renderType: Text.QtRendering
+                textFormat: Text.PlainText
+                wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
             }
         }
 
 
 
 
+    }
+
+    Image {
+        id: image4
+        z: -1
+        anchors.fill: parent
+        source: "New-Blue-Background-Main-2.jpg"
     }
 }
 
