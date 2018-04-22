@@ -454,40 +454,41 @@ int i,j;
                                switch (grille[i][j])
                                    {
                                    case 0 :
-                                       ColorGrille.append( "#cbbeb1");
+                                       ColorGrille.append( "#CCC0B4");
                                        break;
                                    case 2:
-                                        ColorGrille.append("#eee4da");
+                                        ColorGrille.append("#EEE4DA");
                                        break;
                                    case 4:
-                                       ColorGrille.append( "#eae0c8");
+                                       ColorGrille.append( "#EEDFCA");
                                        break;
                                    case 8:
-                                        ColorGrille.append( "#f59563");
+
+                                        ColorGrille.append( "#EFB27C");
                                         break;
                                    case 16 :
-                                       ColorGrille.append( "#3399ff");
+                                       ColorGrille.append( "#ED8C55");
                                        break;
                                    case 32 :
-                                       ColorGrille.append( "#ffa333");
+                                       ColorGrille.append( "#F67C5F");
                                        break;
                                    case 64 :
-                                       ColorGrille.append( "#cef030");
+                                       ColorGrille.append( "#E55C3A");
                                        break;
                                    case 128 :
-                                       ColorGrille.append( "#e8d8ce");
+                                       ColorGrille.append( "#EDCF72");
                                        break;
                                    case 256 :
-                                       ColorGrille.append( "#990303");
+                                       ColorGrille.append( "#F2D052");
                                        break;
                                    case 512 :
-                                       ColorGrille.append( "#6ba5de");
+                                       ColorGrille.append( "#EDC850");
                                        break;
                                    case 1024 :
-                                       ColorGrille.append( "#dcad60");
+                                       ColorGrille.append( "#E3BA14");
                                        break;
                                    case 2048 :
-                                       ColorGrille.append( "#b60022");
+                                       ColorGrille.append( "#ECC400");
                                        break;
 
                                    }
