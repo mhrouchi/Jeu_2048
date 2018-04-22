@@ -4,8 +4,8 @@ import Qt.labs.calendar 1.0
 
 Item {
     id: gamemanager
-    width:85*managerjeu.Size+40;
-    height:120*managerjeu.Size+50;
+    width:350//85*managerjeu.Size+40;
+    height:450//120*managerjeu.Size+50;
     property alias retour: retour
     property alias info: info
     property alias reglage: reglage
@@ -18,8 +18,8 @@ Item {
         Rectangle {
             id: rectanglegrid
             x: 10
-            width:85*managerjeu.Size;
-            height:85*managerjeu.Size;
+            width:350//85*managerjeu.Size;
+            height:350//85*managerjeu.Size;
             color: "#f4953d"
             anchors.top: parent.top
             anchors.topMargin: 150
@@ -80,17 +80,19 @@ Item {
         Rectangle {
             id: rectangle
 
-            width: 165
-            height: 45
+            width: 49
+            height: 40
             color: "#ffffff"
+            anchors.horizontalCenterOffset: 6
             anchors.top: parent.top
-            anchors.topMargin: 80
+            anchors.topMargin: 8
             anchors.horizontalCenter: parent.horizontalCenter
 
             Text {
                 id: score_zone
                 color: "#e21d1d"
                 text: managerjeu.Score
+                anchors.bottomMargin: 0
                 anchors.fill: parent
                 font.family: "Times New Roman"
                 textFormat: Text.AutoText
@@ -102,13 +104,13 @@ Item {
 
         Rectangle {
             id: rectangle1
-            x: 330
-            y: 25
+            x: 236
+            y: 8
             width: 50
             height: 40
             color: "#a9f434"
             anchors.right: parent.right
-            anchors.rightMargin: 20
+            anchors.rightMargin: 64
             transformOrigin: Item.Center
 
             MouseArea {
@@ -130,13 +132,13 @@ Item {
 
         Rectangle {
             id: rectangle2
-            x: 265
-            y: 25
+            x: 292
+            y: 8
             width: 50
             height: 40
             color: "#e65e5e"
             anchors.right: parent.right
-            anchors.rightMargin: 85
+            anchors.rightMargin: 8
 
             MouseArea {
                 id: fermer
@@ -157,13 +159,13 @@ Item {
 
         Rectangle {
             id: rectangle3
-            x: 330
-            y: 80
+            x: 292
+            y: 54
             width: 50
             height: 40
             color: "#669de2"
             anchors.right: parent.right
-            anchors.rightMargin: 20
+            anchors.rightMargin: 8
 
             MouseArea {
                 id: reglage
@@ -184,13 +186,13 @@ Item {
 
         Rectangle {
             id: rectangle4
-            width: 80
+            width: 55
             height: 40
             color: "#32c3e0"
             anchors.left: parent.left
-            anchors.leftMargin: 28
+            anchors.leftMargin: 210
             anchors.top: parent.top
-            anchors.topMargin: 24
+            anchors.topMargin: 104
 
             MouseArea {
                 id: retour
