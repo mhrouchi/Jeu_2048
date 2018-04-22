@@ -4,7 +4,7 @@ Ce jeu est réalisé par **AISSI Khalid** et **HROUCHI Mohammed** étudiants à 
 
 ## Instructions:
 - On éxecute le fichier "2048version1.pro"
-- L'interface par défaut est celle du mode "pédagogique" avec une taille 4*4 ( ce mode nous permet d'effectuer des pas en arrières). On trouve dessus des boutons "infos", "paramètre", "retour" et "new game".
+- L'interface par défaut est celle du mode "pédagogique" avec une taille 4*4 ( ce mode nous permet d'effectuer des pas en arrière). On trouve dessus des boutons "infos", "paramètre", "retour" et "new game".
     - Le bouton "paramètre" nous permet de choisir le mode et la taille du jeu.
     - Le bouton "infos" donne des informations sur le jeu. 
     - Le bouton "retour" nous permet dans le cas du mode pédagogique de reculer des pas en arrière.
