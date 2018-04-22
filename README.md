@@ -1,6 +1,6 @@
 # Jeu_2048
 ## Description
-Ce jeu est réalisé par **AISSI Khalid** et **HROUCHI Mohammed** étudiants à l'Ecole Centrale Lyon. Ce projet s'intègre dans le cadre de l'électif **Programmation des interfaces graphiques en c++**. nous étions encadrés par nos proffesseurs **M.DERRODE Stéphane** et **M.DELLANDREA Emmanuel**.
+Ce jeu est réalisé par **AISSI Khalid** et **HROUCHI Mohammed** étudiants à l'Ecole Centrale Lyon. Ce projet s'intègre dans le cadre de l'électif **Programmation des interfaces graphiques en c++**. nous étions encadrés par nos professeurs **M.DERRODE Stéphane** et **M.DELLANDREA Emmanuel**.
 
 ## Instructions
 - On éxecute le fichier "2048version1.pro"
